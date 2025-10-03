@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: walkmypet-postgres-users
+    environment:
+      POSTGRES_DB: mcc_users_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-users-data:/var/lib/postgresql/data
+    networks:
+      - walkmypet-network
+
+volumes:
+  postgres-users-data:
+
+networks:
+  walkmypet-network:
+

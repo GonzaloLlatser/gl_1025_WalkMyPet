@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: walkmypet-postgres-walkreservation
+    environment:
+      POSTGRES_DB: mcc_walkreservation_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres-walkreservation-data:/var/lib/postgresql/data
+    networks:
+      - walkmypet-network
+
+volumes:
+  postgres-walkreservation-data:
+
+networks:
+  walkmypet-network:
+

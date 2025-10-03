@@ -1,0 +1,74 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mcc-api-gateway-service
+  main:
+    web-application-type: reactive
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              uri: http://localhost:8081
+              predicates:
+                - Path=/api/users/**
+              filters:
+                - StripPrefix=1
+
+            - id: user-auth-service
+              uri: http://localhost:8081
+              predicates:
+                - Path=/api/auth/**
+              filters:
+                - StripPrefix=1
+
+            - id: pet-service
+              uri: http://localhost:8082
+              predicates:
+                - Path=/api/pets/**
+              filters:
+                - StripPrefix=1
+
+            - id: walkreservation-service
+              uri: http://localhost:8083
+              predicates:
+                - Path=/api/walk_reservations/**
+              filters:
+                - StripPrefix=1
+
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowed-origins: "http://localhost:3000"
+                allowed-methods:
+                  - GET
+                  - POST
+                  - PUT
+                  - PATCH
+                  - DELETE
+                  - OPTIONS
+                allowed-headers: "*"
+                allow-credentials: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway:
+
+jwt:
+  secret: mi_clave_super_segura_y_larga_32_bytes!
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    urls:
+      - name: user-service
+        url: http://localhost:8081/v3/api-docs
+      - name: pet-service
+        url: http://localhost:8082/v3/api-docs
+      - name: walk-service
+        url: http://localhost:8083/v3/api-docs
