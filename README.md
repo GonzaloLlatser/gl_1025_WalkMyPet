@@ -13,8 +13,8 @@ Este proyecto representa una **demostración avanzada de conocimientos en backen
 - Cada microservicio con **base de datos PostgreSQL propia** en contenedor Docker.
 - Documentación de API mediante **OpenAPI/Swagger**.
 
-<p align="left">
-  <img src="./capturas/diseño.png" alt="Diagrama de arquitectura" width="300">
+<p align="center">
+  <img src="./capturas/diseño.png" alt="Diagrama de arquitectura" width="500">
 </p>
 
 ## 🔧 Tecnologías utilizadas
@@ -38,8 +38,8 @@ Este proyecto representa una **demostración avanzada de conocimientos en backen
 - Pruebas de endpoints con **Postman**.
 - Documentación accesible vía **Swagger/OpenAPI**.
 
-<p align="left">
-  <img src="./capturas/openApi.png" alt="Captura de OpenApi" width="300">
+<p align="center">
+  <img src="./capturas/openApi.png" alt="Captura de OpenApi" width="800">
 </p>
 
 ## 🚀 Requisitos y ejecución
@@ -83,7 +83,7 @@ http://localhost:8083/v3/api-docs  -> walk-service
 mvn spring-boot:run
 ```
 ## 📸 Microservicios y API Gateway
-<p align="center"> <img src="./capturas/micros.png" alt="Captura de microservicios" width="600">
+<p align="center"> <img src="./capturas/micros.png" alt="Captura de microservicios" width="900">
 
 ## 🧪 Cómo probar o contribuir
 
