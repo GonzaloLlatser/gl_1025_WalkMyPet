@@ -17,7 +17,6 @@ import java.util.List;
 
 @Component
 @Slf4j
-
 public class LoggingGlobalFilter implements GlobalFilter {
 
   private final Key key = Keys.hmacShaKeyFor("clave_fija_super_segura_32bytes!!".getBytes());
